@@ -1,37 +1,14 @@
 #!/usr/bin/python3
 
 import random
+import tweepy
+from credentials import *
+from compliments import *
+from time import sleep
 
-adjectives=[
-    'poetic',
-    'noble',
-    'beautiful',
-    'perfect',
-    'cunning',
-    'pliable',
-    'chestnut-haired',
-    'tricky',
-    'rule-breaking',
-    'thoughtful',
-    'talented',
-    'brilliant',
-    'glowing',
-    'coy'
-]
-
-nouns=[
-    'land mermaid',
-    'spinster',
-    'sunflower',
-    'sunfish',
-    'minx',
-    'moth',
-    'unicorn-nurse',
-    'musk-ox',
-    'tropical fish',
-    'sun goddess',
-    'bastard'
-]
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
 
 def complimenter():
     adjective1 = random.choice(adjectives)
@@ -40,6 +17,9 @@ def complimenter():
     compliment = 'Ann, you {}, {} {}!'.format(adjective1, adjective2, noun)
     return compliment
 
-for i in range(20):
-        print(complimenter())
+def main():
+    print(complimenter())
+    #api.update_status(line)
 
+if __name__ == "__main__":
+  main()
