@@ -1,0 +1,5 @@
+# ignore credentials file
+credentials*
+
+# ignore cache
+__pycache__/
