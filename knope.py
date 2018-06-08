@@ -18,8 +18,9 @@ def complimenter():
     return compliment
 
 def main():
-    print(complimenter())
-    #api.update_status(line)
+    line = complimenter()
+    #print(line)
+    api.update_status(line)
 
 if __name__ == "__main__":
   main()

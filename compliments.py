@@ -78,7 +78,7 @@ nouns=[
     'musk-ox',
     'tropical fish',
     'sun goddess',
-    'pawnee goddess',
+    'Pawnee Goddess',
     'bastard',
     'woman',
     'newborn baby',
