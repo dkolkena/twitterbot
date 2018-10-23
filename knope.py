@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
 import random
-#import tweepy
-#from credentials import *
+import tweepy
+from credentials import *
 from compliments import *
 from time import sleep
 
-# auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-# auth.set_access_token(access_token, access_token_secret)
-# api = tweepy.API(auth)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
 
 def complimenter(subject="Ann"):
     tweet_subject = subject
@@ -20,8 +20,8 @@ def complimenter(subject="Ann"):
 
 def main():
     line = complimenter()
-    print(line)
-    #api.update_status(line)
+    #print(line)
+    api.update_status(line)
     
 
 if __name__ == "__main__":

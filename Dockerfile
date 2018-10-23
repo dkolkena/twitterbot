@@ -1,5 +1,11 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install -y python3
-CMD mkdir app && cd app
+
+ENV HOME=/root
+WORKDIR $HOME
+
+RUN apt-get update && apt-get install -y \
+    python3
+
+RUN mkdir -p $HOME/app && cd $HOME/app
 ADD . .
-CMD python3 knope.py
+CMD [ "python3", "knope.py" ]
